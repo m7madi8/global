@@ -1,0 +1,31 @@
+{
+  "_instructions": "عدّل النصوص لتطابق نشاطكم الفعلي.",
+  "nameAr": "GLOBAL COMPANY",
+  "nameEn": "GLOBAL COMPANY",
+  "heroEyebrow": "توريد صناعي وبناء",
+  "heroTitle": "وضوح في التعامل… من الطلب حتى التوصيل",
+  "heroLead": "GLOBAL COMPANY شركة توريد تركز على منتجات موثوقة، أسعار واضحة، ومتابعة طلباتكم خطوة بخطوة.",
+  "tagline": "GLOBAL COMPANY شركة توريد تركز على منتجات موثوقة، أسعار واضحة، ومتابعة طلباتكم خطوة بخطوة.",
+  "about": "نخدم مقاولين وورشاً محلية. اطلب عبر الموقع، وادفع نقداً عند استلام طلبك.",
+  "phone": null,
+  "whatsapp": null,
+  "email": null,
+  "address": "خاراس",
+  "city": "الخليل",
+  "serviceArea": null,
+  "workingHours": null,
+  "heroImage": "/assets/brand/hero-company.jpg",
+  "logo": "/assets/brand/logo-mark-outline-ink.svg",
+  "logoFilled": "/assets/brand/logo-mark.svg",
+  "logoOutline": "/assets/brand/logo-mark-outline.svg",
+  "currency": "ILS",
+  "deliveryCharge": null,
+  "paymentNote": "الدفع نقداً عند الاستلام فقط.",
+  "featuredProductIds": [
+    "gc-004",
+    "gc-wpc-001",
+    "gc-002",
+    "gc-marble-001",
+    "gc-003"
+  ]
+}

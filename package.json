@@ -1,0 +1,17 @@
+{
+  "name": "global-company-store",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GLOBAL COMPANY building materials storefront",
+  "scripts": {
+    "sync:catalog": "node scripts/sync-catalog.js",
+    "predev": "node scripts/sync-catalog.js",
+    "prestart": "node scripts/sync-catalog.js",
+    "dev": "node server/server.js",
+    "start": "node server/server.js",
+    "validate:catalog": "node scripts/validate-catalog.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

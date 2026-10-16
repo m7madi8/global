@@ -1,0 +1,9 @@
+{
+  "_notice": "لا تستخدم في الإنتاج. للاختبار المحلي فقط إذا أردت نسخة تجريبية منفصلة.",
+  "meta": {
+    "companyName": "GLOBAL COMPANY",
+    "locale": "ar",
+    "currency": "ILS"
+  },
+  "products": []
+}

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="gc-ocean" x1="8" y1="8" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#243a5c"/>
+      <stop offset="1" stop-color="#0b121c"/>
+    </linearGradient>
+    <linearGradient id="gc-swoosh" x1="4" y1="32" x2="46" y2="10" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2f5499"/>
+      <stop offset="0.45" stop-color="#5b8fd9"/>
+      <stop offset="1" stop-color="#9ec5f0"/>
+    </linearGradient>
+    <linearGradient id="gc-land" x1="18" y1="14" x2="32" y2="28" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#d8e8f8"/>
+      <stop offset="1" stop-color="#9eb8d8"/>
+    </linearGradient>
+    <radialGradient id="gc-shine" cx="0" cy="0" r="1" gradientUnits="objectBoundingBox" gradientTransform="translate(0.32 0.28) scale(0.9)">
+      <stop stop-color="#fff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <path
+    d="M5 31.5C11 35.5 17 34 22.5 29.5C28 25 33 18.5 38.5 12.5L41.5 14.2L39.8 16.8L42.2 18.5L39.5 20.5L41.8 22.8L38.5 23.5"
+    stroke="url(#gc-swoosh)"
+    stroke-width="2.8"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+    opacity="0.55"
+  />
+  <circle cx="24" cy="22" r="11.5" fill="url(#gc-ocean)"/>
+  <circle cx="24" cy="22" r="11.5" fill="url(#gc-shine)"/>
+  <ellipse cx="24" cy="22" rx="11.5" ry="4.2" stroke="#fff" stroke-opacity="0.14" stroke-width="0.6"/>
+  <ellipse cx="24" cy="22" rx="11.5" ry="7.8" stroke="#fff" stroke-opacity="0.1" stroke-width="0.5"/>
+  <path
+    d="M14 20.5c2.2-3.2 5.8-5.2 10-5.2 3.2 0 6 1.4 7.8 3.6-2.4 1.2-5.2 1.8-8 1.6-3.4-.2-6.4-1.5-8.6-3.5-1.2 1.2-2.1 2.6-2.6 4.2-.8-.5-1.4-1.2-1.8-2.1-.5 1.5-.5 3.1 0 4.6 1.4-2.2 3.6-3.8 6.2-4.5z"
+    fill="url(#gc-land)"
+    opacity="0.92"
+  />
+  <path
+    d="M26.5 16.2c2.8.8 5.2 2.6 6.8 5-1.8.6-3.8.7-5.7.3-2-.5-3.7-1.6-4.9-3.2 1.2-.8 2.5-1.4 3.8-2.1z"
+    fill="#c5daf0"
+    opacity="0.85"
+  />
+  <path
+    d="M6 33.2C12.5 37.2 19 35.8 24.5 31.2C30 26.6 34.5 20 39 13.5C40.5 11.5 42.2 9.8 44.2 8.5"
+    stroke="url(#gc-swoosh)"
+    stroke-width="3.2"
+    stroke-linecap="round"
+    fill="none"
+  />
+  <path
+    d="M44.2 8.5l2.8-1.2-1.5 2.6 2.4 1-2.8 1.2-1.2 2.6-1.4-2.8-2.6-.2 2.2-1.4z"
+    fill="url(#gc-swoosh)"
+  />
+</svg>

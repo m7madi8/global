@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">صورة المنتج قيد الإضافة</title>
+  <desc id="desc">عنصر بديل حتى توفير صورة منتج معتمدة.</desc>
+  <rect width="800" height="600" fill="#EAEAE5"/>
+  <rect x="48" y="48" width="704" height="504" stroke="#73756F" stroke-width="1" stroke-dasharray="8 8"/>
+  <text x="400" y="300" text-anchor="middle" fill="#73756F" font-family="Tahoma,sans-serif" font-size="20">صورة قيد الإضافة</text>
+</svg>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 88" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="gc-ocean-f" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#243a5c"/>
+      <stop offset="1" stop-color="#0b121c"/>
+    </linearGradient>
+    <linearGradient id="gc-swoosh-f" x1="0" y1="48" x2="62" y2="8" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2f5499"/>
+      <stop offset="0.5" stop-color="#5b8fd9"/>
+      <stop offset="1" stop-color="#9ec5f0"/>
+    </linearGradient>
+    <linearGradient id="gc-land-f" x1="16" y1="16" x2="44" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#d8e8f8"/>
+      <stop offset="1" stop-color="#9eb8d8"/>
+    </linearGradient>
+    <radialGradient id="gc-shine-f" cx="0.32" cy="0.28" r="0.85">
+      <stop stop-color="#fff" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g transform="translate(4 8)">
+    <path
+      d="M4 42C10 46 16 44.5 21.5 40C27 35.5 31.5 29 37 23"
+      stroke="url(#gc-swoosh-f)"
+      stroke-width="3"
+      stroke-linecap="round"
+      fill="none"
+      opacity="0.5"
+    />
+    <circle cx="32" cy="32" r="15" fill="url(#gc-ocean-f)"/>
+    <circle cx="32" cy="32" r="15" fill="url(#gc-shine-f)"/>
+    <ellipse cx="32" cy="32" rx="15" ry="5.5" stroke="#fff" stroke-opacity="0.14" stroke-width="0.7"/>
+    <path
+      d="M18 29c2.8-4 7.5-6.5 12.5-6.5 4 0 7.5 1.7 9.8 4.5-3 1.5-6.5 2.2-10 2-4.2-.2-8-1.8-10.8-4.2-1.4 1.5-2.5 3.2-3.2 5.2-1-.6-1.8-1.5-2.3-2.6-.6 1.8-.6 3.8 0 5.6 1.7-2.8 4.4-4.8 7.5-5.8z"
+      fill="url(#gc-land-f)"
+    />
+    <path
+      d="M5 44C12 48.5 19 47 24.5 42C30 37 34.5 30 40 23.5C41.8 21.2 43.8 19.2 46.2 17.5"
+      stroke="url(#gc-swoosh-f)"
+      stroke-width="4"
+      stroke-linecap="round"
+      fill="none"
+    />
+    <path
+      d="M46.2 17.5l3.5-1.5-2 3.2 3 1.2-3.5 1.5-1.5 3.2-1.8-3.5-3.2-.2 2.8-1.8z"
+      fill="url(#gc-swoosh-f)"
+    />
+  </g>
+  <text
+    x="140"
+    y="54"
+    text-anchor="middle"
+    fill="#0f1724"
+    font-family="'Readex Pro', 'Segoe UI', Tahoma, sans-serif"
+    font-size="15"
+    font-weight="600"
+    letter-spacing="0.14em"
+  >GLOBAL COMPANY</text>
+</svg>

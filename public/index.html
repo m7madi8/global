@@ -1,0 +1,719 @@
+﻿<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+
+  <head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta
+
+      name="description"
+
+      content="GLOBAL COMPANY — تعرف على الشركة واطلب منتجاتنا بالدفع عند الاستلام."
+
+    />
+
+    <title>GLOBAL COMPANY</title>
+
+    <link rel="stylesheet" href="/css/main.css" />
+
+    <link rel="icon" href="/assets/brand/logo-mark.svg" type="image/svg+xml" />
+
+  </head>
+
+  <body>
+
+    <a class="skip-link" href="#main">انتقل إلى المحتوى</a>
+
+
+
+    <div id="site-banner" class="banner banner--warn" hidden></div>
+
+
+
+    <header class="site-header">
+
+      <div class="site-header__shine" aria-hidden="true"></div>
+
+      <div class="container">
+
+        <div class="site-header__bar">
+
+          <a class="brand" href="/">
+
+            <img class="brand__mark brand__mark--stroke" data-brand-logo src="/assets/brand/logo-mark-outline-ink.svg" alt="" width="40" height="40" />
+
+            <span class="brand__text" data-brand-name>GLOBAL COMPANY</span>
+
+          </a>
+
+
+
+          <nav class="site-nav site-nav--desktop" aria-label="التنقل الرئيسي">
+
+            <div class="site-nav__track">
+
+              <a class="site-nav__link site-nav__link--emphasis" href="/products.html">المنتجات</a>
+
+              <a class="site-nav__link" href="#about">الطلب والتوصيل</a>
+
+              <a class="site-nav__link" href="#location">الموقع</a>
+
+            </div>
+
+          </nav>
+
+
+
+          <div class="header-actions">
+
+          <button
+
+            type="button"
+
+            class="icon-btn menu-toggle menu-toggle--lux"
+
+            data-nav-toggle
+
+            aria-expanded="false"
+
+            aria-controls="mobile-nav-panel"
+
+            aria-label="فتح القائمة"
+
+          >
+
+            <span data-icon-slot="menu" aria-hidden="true"></span>
+
+          </button>
+
+          <button
+
+            type="button"
+
+            class="icon-btn cart-trigger cart-trigger--lux"
+
+            data-cart-open
+
+            aria-haspopup="dialog"
+
+            aria-controls="cart-drawer"
+
+          >
+
+            <span class="cart-trigger__label">فتح السلة</span>
+
+            <span data-icon-slot="cart" aria-hidden="true"></span>
+
+            <span class="cart-trigger__count" data-cart-count data-count="0" aria-hidden="true">0</span>
+
+          </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+
+    <div id="nav-overlay" class="nav-overlay" aria-hidden="true"></div>
+
+    <nav
+
+      id="mobile-nav-panel"
+
+      class="mobile-nav-panel"
+
+      aria-label="التنقل — جوال"
+
+      aria-hidden="true"
+
+      hidden
+
+    >
+
+      <div class="mobile-nav-panel__backdrop" aria-hidden="true"></div>
+
+      <header class="mobile-nav-panel__header">
+
+        <div class="mobile-nav-panel__identity">
+
+          <img
+
+            class="mobile-nav-panel__mark"
+
+            src="/assets/brand/logo-mark-outline.svg"
+
+            alt=""
+
+            width="40"
+
+            height="40"
+
+          />
+
+          <div>
+
+            <p class="mobile-nav-panel__brand" data-brand-name>GLOBAL COMPANY</p>
+
+            <p class="mobile-nav-panel__hint">التنقل</p>
+
+          </div>
+
+        </div>
+
+        <button type="button" class="mobile-nav-panel__close" data-nav-toggle aria-label="إغلاق القائمة">
+
+          <span class="sr-only">إغلاق</span>
+
+          <span class="mobile-nav-panel__close-icon" aria-hidden="true">
+
+            <span data-icon-slot="close"></span>
+
+          </span>
+
+        </button>
+
+      </header>
+
+      <div class="mobile-nav-panel__menu">
+
+        <ol class="mobile-nav-panel__list">
+
+          <li>
+
+            <a class="mobile-nav-panel__item mobile-nav-panel__item--stack" href="/products.html">
+
+              <span class="mobile-nav-panel__num" aria-hidden="true">01</span>
+
+              <span class="mobile-nav-panel__item-copy">
+
+                <span class="mobile-nav-panel__label">المنتجات</span>
+
+                <span class="mobile-nav-panel__sub">المواتير · بديل الخشب · بديل الرخام</span>
+
+              </span>
+
+            </a>
+
+          </li>
+
+          <li>
+
+            <a class="mobile-nav-panel__item" href="#about">
+
+              <span class="mobile-nav-panel__num" aria-hidden="true">02</span>
+
+              <span class="mobile-nav-panel__label">الطلب والتوصيل</span>
+
+            </a>
+
+          </li>
+
+          <li>
+
+            <a class="mobile-nav-panel__item" href="#location">
+
+              <span class="mobile-nav-panel__num" aria-hidden="true">03</span>
+
+              <span class="mobile-nav-panel__label">الموقع</span>
+
+            </a>
+
+          </li>
+
+        </ol>
+
+      </div>
+
+      <footer class="mobile-nav-panel__footer">
+
+        <a class="mobile-nav-panel__cart-cta" href="#" data-cart-open>
+
+          <span data-icon-slot="cart" aria-hidden="true"></span>
+
+          <span>فتح السلة</span>
+
+        </a>
+
+      </footer>
+
+    </nav>
+
+
+
+    <p id="cart-live" class="sr-only-visually-hidden" aria-live="polite" aria-atomic="true"></p>
+
+
+
+    <main id="main" class="home-flow">
+
+      <section class="hero-luxe home-flow__hero" aria-labelledby="hero-title" data-hero-root data-home-section>
+        <div class="container hero-luxe__grid">
+          <div class="hero-luxe__copy">
+            <div class="hero-luxe__brand" aria-label="GLOBAL COMPANY">
+              <img
+                class="hero-luxe__logo"
+                data-hero-logo
+                src="/assets/brand/logo-mark-outline-ink.svg"
+                alt=""
+                width="44"
+                height="44"
+              />
+              <span class="hero-luxe__wordmark" data-hero-wordmark>GLOBAL COMPANY</span>
+            </div>
+
+            <p class="hero-luxe__eyebrow" data-hero-eyebrow>توريد صناعي وبناء</p>
+            <span class="hero-luxe__rule" aria-hidden="true"></span>
+
+            <h1 class="hero-luxe__title" id="hero-title" data-hero-title>
+              وضوح في التعامل… من الطلب حتى التوصيل
+            </h1>
+
+            <p class="hero-luxe__lead" data-hero-lead></p>
+
+            <div class="hero-luxe__actions">
+              <a class="btn btn--primary btn--lg" href="/products.html">تصفح المنتجات</a>
+              <a class="btn btn--secondary" href="#featured">المختارة</a>
+            </div>
+
+            <ul class="hero-luxe__scope">
+              <li><a href="/products.html#catalog-section">المواتير</a></li>
+              <li><a href="/products.html#catalog-wpc-section">بديل الخشب</a></li>
+              <li><a href="/products.html#catalog-marble-section">بديل الرخام</a></li>
+            </ul>
+          </div>
+
+          <figure class="hero-luxe__visual" data-hero-media>
+            <div class="hero-luxe__halo" aria-hidden="true"></div>
+            <div class="hero-luxe__frame">
+              <img
+                class="hero-luxe__photo"
+                data-hero-image
+                src="/assets/brand/hero-company.jpg"
+                alt=""
+                width="1600"
+                height="900"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </div>
+          </figure>
+        </div>
+
+        <div class="hero-luxe__baseline" aria-hidden="true"></div>
+      </section>
+
+
+
+      <section class="section-luxe section-luxe--featured home-flow__featured" id="featured" aria-labelledby="featured-title" data-home-section>
+
+        <div class="container">
+
+          <header class="section-luxe__head">
+
+            <div class="section-luxe__head-main">
+
+              <p class="section-luxe__eyebrow">GLOBAL COMPANY</p>
+
+              <span class="section-luxe__rule" aria-hidden="true"></span>
+
+              <h2 class="section-luxe__title" id="featured-title" data-featured-title>المختارة</h2>
+
+              <p class="section-luxe__intro" data-featured-intro></p>
+
+              <nav class="section-luxe__chips" aria-label="أقسام المنتجات">
+
+                <a class="section-luxe__chip" href="/products.html#catalog-section" data-cat-motors>المواتير</a>
+
+                <a class="section-luxe__chip" href="/products.html#catalog-wpc-section" data-cat-wpc>بديل الخشب</a>
+
+                <a class="section-luxe__chip" href="/products.html#catalog-marble-section" data-cat-marble>بديل الرخام</a>
+
+              </nav>
+
+            </div>
+
+            <a class="btn btn--secondary section-luxe__action" href="/products.html" data-view-all-products>عرض الكل</a>
+
+          </header>
+
+          <div class="featured-showcase" data-featured-grid role="list"></div>
+
+        </div>
+
+      </section>
+
+
+
+      <section class="section-luxe section-luxe--trust" aria-label="مميزات الخدمة" data-home-section>
+
+        <div class="container trust-band">
+
+          <div class="trust-band__grid">
+
+            <div class="trust-band__item">
+
+              <span class="trust-band__icon" data-icon-slot="cod" aria-hidden="true"></span>
+
+              <div>
+
+                <p class="trust-band__title" data-home-pillar-cod>الدفع عند الاستلام</p>
+
+                <p class="trust-band__hint" data-home-pillar-cod-hint></p>
+
+              </div>
+
+            </div>
+
+            <div class="trust-band__item">
+
+              <span class="trust-band__icon" aria-hidden="true">₪</span>
+
+              <div>
+
+                <p class="trust-band__title" data-home-pillar-price>أسعار واضحة</p>
+
+                <p class="trust-band__hint" data-home-pillar-price-hint></p>
+
+              </div>
+
+            </div>
+
+            <div class="trust-band__item">
+
+              <span class="trust-band__icon trust-band__icon--globe" aria-hidden="true"></span>
+
+              <div>
+
+                <p class="trust-band__title" data-home-pillar-range>توريد متعدد</p>
+
+                <p class="trust-band__hint" data-home-pillar-range-hint></p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <section class="section-luxe section-luxe--about" id="about" aria-labelledby="about-title" data-home-section>
+
+        <div class="container about-luxe">
+
+          <div class="about-luxe__copy">
+
+            <p class="section-luxe__eyebrow">الطلب</p>
+
+            <span class="section-luxe__rule" aria-hidden="true"></span>
+
+            <h2 class="section-luxe__title" id="about-title">الطلب والتوصيل</h2>
+
+            <p class="section-luxe__intro" data-about></p>
+
+            <a class="btn btn--primary btn--lg" href="/products.html">ابدأ من المنتجات</a>
+
+          </div>
+
+          <div class="about-luxe__panel">
+
+            <h3 class="about-luxe__steps-title" id="home-steps-title">كيف تطلب؟</h3>
+
+            <ol class="order-steps">
+
+              <li class="order-steps__item">
+
+                <span class="order-steps__num">1</span>
+
+                <span class="order-steps__text" data-home-step-1></span>
+
+              </li>
+
+              <li class="order-steps__item">
+
+                <span class="order-steps__num">2</span>
+
+                <span class="order-steps__text" data-home-step-2></span>
+
+              </li>
+
+              <li class="order-steps__item">
+
+                <span class="order-steps__num">3</span>
+
+                <span class="order-steps__text" data-home-step-3></span>
+
+              </li>
+
+            </ol>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <section class="section-luxe section-luxe--place" id="location" aria-labelledby="location-title" data-home-section>
+
+        <div class="container place-luxe">
+
+          <div class="place-luxe__copy">
+
+            <p class="section-luxe__eyebrow">الموقع</p>
+
+            <span class="section-luxe__rule" aria-hidden="true"></span>
+
+            <h2 class="section-luxe__title" id="location-title" data-place-title>خاراس — الخليل</h2>
+
+            <p class="section-luxe__intro">
+
+              مقر GLOBAL COMPANY في بلدة خاراس، محافظة الخليل. من هنا نجهّز طلبات المواتير وبديل الخشب وبديل الرخام، ونتواصل لتأكيد التوصيل قبل الاستلام.
+
+            </p>
+
+            <dl class="place-luxe__facts">
+
+              <div>
+
+                <dt>البلدة</dt>
+
+                <dd>خاراس</dd>
+
+              </div>
+
+              <div>
+
+                <dt>المحافظة</dt>
+
+                <dd>الخليل</dd>
+
+              </div>
+
+              <div>
+
+                <dt>الدفع</dt>
+
+                <dd>عند الاستلام</dd>
+
+              </div>
+
+            </dl>
+
+            <a
+
+              class="btn btn--secondary"
+
+              href="https://www.openstreetmap.org/?mlat=31.6144&mlon=35.0414#map=15/31.6144/35.0414"
+
+              target="_blank"
+
+              rel="noopener noreferrer"
+
+            >فتح الخريطة</a>
+
+          </div>
+
+          <figure class="place-luxe__map">
+
+            <div class="place-luxe__frame">
+
+              <iframe
+
+                data-place-map
+
+                title="خريطة موقع الشركة في خاراس، الخليل"
+
+                data-src="https://www.openstreetmap.org/export/embed.html?bbox=35.0214%2C31.5994%2C35.0614%2C31.6294&amp;layer=mapnik&amp;marker=31.6144%2C35.0414"
+
+                scrolling="no"
+
+                tabindex="-1"
+
+                referrerpolicy="no-referrer-when-downgrade"
+
+              ></iframe>
+
+            </div>
+
+            <figcaption class="place-luxe__badge">
+
+              <span data-icon-slot="pin" aria-hidden="true"></span>
+
+              <span>خاراس، الخليل</span>
+
+            </figcaption>
+
+          </figure>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+
+    <footer class="site-footer">
+      <div class="site-footer__beam" aria-hidden="true"></div>
+      <div class="container">
+        <div class="site-footer__shell site-footer__shell--rich">
+          <div class="site-footer__grid">
+            <div class="site-footer__col">
+              <a class="site-footer__brand-link" href="/">
+                <img
+                  class="site-footer__logo"
+                  data-footer-logo
+                  src="/assets/brand/logo-mark-outline.svg"
+                  alt=""
+                  width="36"
+                  height="36"
+                />
+                <span data-footer-brand>GLOBAL COMPANY</span>
+              </a>
+              <p class="site-footer__meta" data-footer-payment></p>
+            </div>
+            <div class="site-footer__col">
+              <p class="site-footer__label">الموقع</p>
+              <p class="site-footer__place" data-footer-place>خاراس — الخليل</p>
+              <p class="site-footer__place-note">مقر الشركة في بلدة خاراس، محافظة الخليل.</p>
+              <a class="site-footer__map-link" href="/#location">عرض الموقع على الخريطة</a>
+              <div class="site-footer__contact" id="site-contact"></div>
+            </div>
+            <nav class="site-footer__col" aria-label="السياسات">
+              <p class="site-footer__label">السياسات</p>
+              <ul class="site-footer__policies">
+                <li><a href="/policies.html#privacy">سياسة الخصوصية</a></li>
+                <li><a href="/policies.html#delivery">سياسة التوصيل</a></li>
+                <li><a href="/policies.html#returns">سياسة الإرجاع والاستبدال</a></li>
+                <li><a href="/policies.html#terms">الشروط والأحكام</a></li>
+              </ul>
+            </nav>
+          </div>
+          <p class="site-footer__legal">
+            © <span data-footer-year>2026</span>
+            <span data-footer-brand>GLOBAL COMPANY</span>
+          </p>
+          <p class="site-footer__tagline" data-footer-tagline hidden></p>
+        </div>
+      </div>
+    </footer>
+
+
+
+    <div id="overlay" class="overlay" data-cart-close tabindex="-1" aria-hidden="true"></div>
+
+
+
+    <aside
+
+      id="cart-drawer"
+
+      class="drawer drawer--luxury"
+
+      role="dialog"
+
+      aria-modal="true"
+
+      aria-labelledby="cart-drawer-title"
+
+      aria-hidden="true"
+
+    >
+
+      <div class="drawer__header drawer__header--luxury">
+
+        <div class="drawer__intro">
+
+          <p class="drawer__eyebrow">GLOBAL COMPANY</p>
+
+          <h2 class="drawer__title" id="cart-drawer-title">سلة المشتريات</h2>
+
+          <p class="drawer__meta" data-cart-drawer-meta aria-live="polite"></p>
+
+        </div>
+
+        <button type="button" class="drawer__close drawer__close--minimal" data-cart-close aria-label="إغلاق السلة">
+
+          <span class="sr-only">إغلاق</span>
+
+          <span class="drawer__close-icon" aria-hidden="true">
+
+            <span data-icon-slot="close"></span>
+
+          </span>
+
+        </button>
+
+      </div>
+
+      <div class="drawer__body drawer__body--luxury" id="cart-drawer-body"></div>
+
+      <div class="drawer__footer drawer__footer--luxury" id="cart-drawer-footer"></div>
+
+    </aside>
+
+
+
+    <dialog id="product-dialog" class="dialog" aria-labelledby="dialog-title">
+
+      <div class="dialog__inner">
+
+        <header class="dialog__header">
+
+          <h2 class="dialog__title" id="dialog-title">المنتج</h2>
+
+          <button type="button" class="icon-btn" data-dialog-close aria-label="إغلاق التفاصيل">
+
+            <span data-icon-slot="close" aria-hidden="true"></span>
+
+          </button>
+
+        </header>
+
+        <div class="dialog__media">
+
+          <img id="dialog-image" src="" alt="" width="800" height="600" />
+
+        </div>
+
+        <p id="dialog-desc" class="dialog__desc"></p>
+
+        <p class="dialog__price-row">
+
+          <strong id="dialog-price" class="tabular-nums"></strong>
+
+          <span id="dialog-unit" class="product-card__unit"></span>
+
+        </p>
+
+        <button type="button" class="btn btn--primary" id="dialog-add">أضف إلى السلة</button>
+
+      </div>
+
+    </dialog>
+
+
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+
+
+    <script type="module" src="/js/app.js"></script>
+
+  </body>
+
+</html>
+

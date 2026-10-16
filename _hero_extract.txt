@@ -1,0 +1,327 @@
+
+
+===== LINE 227 role=user len=87 =====
+<user_query>
+اختصر الهيرو واكثر نظافه وبدون زر تصفح المواتير , بدون اي زر
+</user_query>
+
+===== LINE 232 role=user len=63 =====
+<user_query>
+كبر الخلفيه والهيرو ليصبح عالمي وقوي
+</user_query>
+
+===== LINE 246 role=user len=67 =====
+<user_query>
+بدي ثيم رهيب جميل راقي بجنن ( بدون بيج )
+</user_query>
+
+===== LINE 301 role=user len=9792 =====
+<user_query>
+خذ تنسيق الهيرو هذا ولكن لا تعتمد الخلفيه التي فيه : <!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GLOBAL COMPANY — Hero Background</title>
+<style>
+  :root{--ink:#0b0c0e}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--ink)}
+  .hero{
+    position:relative;overflow:hidden;isolation:isolate;
+    min-height:clamp(560px,86vh,940px);
+    background:var(--ink);
+  }
+  /* the visual lives in one part of the hero; the rest stays clean */
+  .stage{
+    position:absolute;top:0;bottom:0;left:0;width:62%;
+    -webkit-mask-image:linear-gradient(to right,#000 0,#000 58%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 14%,#000 100%);
+    -webkit-mask-composite:source-in;
+            mask-image:linear-gradient(to right,#000 0,#000 58%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 14%,#000 100%);
+            mask-composite:intersect;
+    background:radial-gradient(60% 55% at 40% 35%,rgba(150,165,185,.16),transparent 70%);
+  }
+  .stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity 1.4s ease}
+  .stage canvas.on{opacity:1}
+  [dir=ltr] .stage{left:auto;right:0;transform:scaleX(-1)}
+  @media (max-width:900px){
+    .stage{width:100%;height:68%;bottom:auto;
+      -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 55%,transparent 100%);
+              mask-image:linear-gradient(to bottom,#000 0,#000 55%,transparent 100%);
+      -webkit-mask-composite:source-over;mask-composite:add}
+  }
+</style>
+</head>
+<body>
+
+<section class="hero" aria-hidden="true">
+  <div class="stage"><canvas id="bg"></canvas></div>
+</section>
+
+<script id="fs" type="x-shader/x-fragment">#version 300 es
+precision highp float;
+out vec4 outColor;
+uniform vec2 R;
+uniform float T;
+uniform vec2 M;
+
+float hash(vec2 p){p=fract(p*vec2(123.34,456.21));p+=dot(p,p+45.32);return fract(p.x*p.y);}
+float noise(vec2 p){
+  vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);
+  return mix(mix(hash(i),hash(i+vec2(1,0)),f.x),mix(hash(i+vec2(0,1)),hash(i+vec2(1,1)),f.x),f.y);
+}
+float sdBox(vec3 p,vec3 b,float r){
+  vec3 q=abs(p)-b+r;
+  return length(max(q,0.))+min(max(q.x,max(q.y,q.z)),0.)-r;
+}
+
+const vec3 L=vec3(-.5922,.5004,.6310);          // key light direction (normalised below as well)
+const vec3 LC=vec3(1.,.965,.91);
+
+vec2 map(vec3 p){
+  vec2 res=vec2(p.y,1.);
+  // A — monumental slab, left
+  float dA=sdBox(p-vec3(-3.6,4.4,-0.8),vec3(1.35,4.4,.62),.05);
+  if(dA<res.x)res=vec2(dA,2.);
+  // B — mid slab, set back, offset
+  float dB=sdBox(p-vec3(.3,3.1,-3.0),vec3(1.05,3.1,.55),.05);
+  if(dB<res.x)res=vec2(dB,3.);
+  // C — long low graphite plinth, foreground right
+  float dC=sdBox(p-vec3(3.5,.75,.9),vec3(2.0,.75,1.05),.05);
+  if(dC<res.x)res=vec2(dC,4.);
+  return res;
+}
+vec3 calcN(vec3 p){
+  vec2 e=vec2(1.,-1.)*.0007;
+  return normalize(e.xyy*map(p+e.xyy).x+e.yyx*map(p+e.yyx).x+e.yxy*map(p+e.yxy).x+e.xxx*map(p+e.xxx).x);
+}
+float softShadow(vec3 ro,vec3 rd){
+  float res=1.,t=.06;
+  for(int i=0;i<44;i++){
+    float h=map(ro+rd*t).x;
+    res=min(res,10.*h/t);
+    t+=clamp(h,.03,.7);
+    if(res<.001||t>24.)break;
+  }
+  res=clamp(res,0.,1.);
+  return res*res*(3.-2.*res);
+}
+float calcAO(vec3 p,vec3 n){
+  float o=0.,s=1.;
+  for(int i=0;i<5;i++){
+    float h=.03+.14*float(i);
+    o+=(h-map(p+n*h).x)*s;s*=.82;
+  }
+  return clamp(1.-1.7*o,0.,1.);
+}
+vec2 trace(vec3 ro,vec3 rd){
+  float t=.02;
+  for(int i=0;i<110;i++){
+    vec2 h=map(ro+rd*t);
+    if(h.x<.0006*t)return vec2(t,h.y);
+    t+=h.x;
+    if(t>46.)break;
+  }
+  return vec2(-1.,0.);
+}
+
+vec3 env(vec3 rd){
+  vec3 Ln=normalize(L);
+  vec3 c=mix(vec3(.004,.005,.007),vec3(.022,.027,.034),smoothstep(-.25,.95,rd.y));
+  c+=vec3(1.,.97,.92)*smoothstep(.80,.93,dot(rd,Ln))*4.;           // big softbox
+  c+=vec3(.72,.82,1.)*smoothstep(.962,.985,dot(rd,normalize(vec3(.82,.28,-.2))))*2.2; // cool strip light
+  c+=vec3(.11,.13,.17)*exp(-length(rd.xy-vec2(.10,.26))*3.4)*step(rd.z,0.); // backlit glow
+  return c;
+}
+
+vec3 shadeObj(vec3 p,vec3 n,vec3 rd,float id,bool full){
+  vec3 Ln=normalize(L);
+  vec3 alb=id<2.5?vec3(.15,.16,.18):(id<3.5?vec3(.22,.23,.25):vec3(.06,.065,.072));
+  float sh=full?softShadow(p+n*.012,Ln):1.;
+  float spot=smoothstep(15.,3.5,length(p-vec3(-6.,6.,5.5)));
+  float ao=full?calcAO(p,n):.75;
+  float dif=clamp(dot(n,Ln),0.,1.)*sh*(.12+.88*spot);
+  float streak=noise(vec2(p.y*210.,(p.x+p.z)*1.7));
+  streak=.55*streak+.45*noise(vec2(p.y*37.,(p.x+p.z)*.8));
+  vec3 col=alb*LC*dif*2.6;
+  col+=alb*mix(vec3(.006,.007,.009),vec3(.03,.036,.045),n.y*.5+.5)*ao*1.4;
+  vec3 h=normalize(Ln-rd);
+  float sp=pow(max(dot(n,h),0.),24.+90.*streak)*dif;
+  col+=LC*sp*(.7+.9*streak);
+  float fr=.05+.95*pow(1.-max(dot(n,-rd),0.),5.);
+  col+=env(reflect(rd,n))*fr*(.30+.9*streak)*ao*(id>3.5?.6:1.)*(.25+.75*spot);
+  // crisp edge highlight where the chamfer catches the key light
+  float rim=pow(1.-max(dot(n,-rd),0.),3.)*.22;
+  col+=LC*rim*dif;
+  return col;
+}
+
+void main(){
+  vec2 uv=(gl_FragCoord.xy*2.-R)/R.y;
+  vec3 ro=vec3(sin(T*.07)*.38+M.x*.55,.85+M.y*.2,8.4);
+  vec3 ta=vec3(-.2,2.5,0.);
+  vec3 cw=normalize(ta-ro),cu=normalize(cross(cw,vec3(0,1,0))),cv=cross(cu,cw);
+  vec3 rd=normalize(uv.x*cu+uv.y*cv+1.85*cw);
+  vec3 Ln=normalize(L);
+
+  vec2 hit=trace(ro,rd);
+  float t=hit.x;
+  vec3 col;
+  if(t<0.){
+    col=env(rd);
+    t=46.;
+  }else{
+    vec3 p=ro+rd*t;
+    if(hit.y<1.5){
+      // polished concrete floor
+      vec3 n=vec3(0,1,0);
+      n.xz+=(vec2(noise(p.xz*1.1),noise(p.xz*1.1+17.))-.5)*.008;
+      n=normalize(n);
+      float ndv=max(dot(n,-rd),0.);
+      float fr=.10+.90*pow(1.-ndv,4.);
+      float sh=softShadow(p+n*.01,Ln);
+      vec3 base=vec3(.016,.017,.020);
+      col=base*LC*max(dot(n,Ln),0.)*sh*2.2+base*.5;
+      vec3 r=reflect(rd,n);
+      vec2 h2=trace(p+n*.02,r);
+      vec3 rc;
+      if(h2.x<0.)rc=env(r);
+      else{
+        vec3 q=p+n*.02+r*h2.x;
+        rc=shadeObj(q,calcN(q),r,h2.y,false);
+        rc=mix(rc,vec3(.04,.048,.06),1.-exp(-h2.x*.05));
+      }
+      col+=rc*fr*.7*exp(-h2.x*.05);
+      // soft pool of light on the floor
+      col+=LC*exp(-length((p.xz-vec2(-3.,3.5))*vec2(.20,.28)))*.05*sh;
+    }else{
+      col=shadeObj(p,calcN(p),rd,hit.y,true);
+    }
+  }
+
+  // atmosphere
+  float dist=min(t,46.);
+  vec3 haze=vec3(.006,.008,.011)+vec3(.55,.60,.70)*pow(max(dot(rd,Ln),0.),6.)*.01;
+  col=mix(col,haze,1.-exp(-dist*.028));
+
+  // light shafts (cheap single scattering through the gaps)
+  float j=hash(gl_FragCoord.xy+fract(T)*13.)*.5;
+  float acc=0.;
+  float maxS=min(dist,22.);
+  for(int i=0;i<18;i++){
+    float s=(float(i)+j)*maxS/18.;
+    vec3 q=ro+rd*s;
+    float v=1.;
+    for(int k=1;k<7;k++){
+      if(map(q+Ln*float(k)*.95).x<.04){v=0.;break;}
+    }
+    acc+=v;
+  }
+  acc/=18.;
+  col+=LC*acc*(.022+.11*pow(max(dot(rd,Ln),0.),3.))*smoothstep(0.,6.,maxS);
+
+  // filmic grade
+  col*=.9;
+  col=(col*(2.51*col+.03))/(col*(2.43*col+.59)+.14);
+  col=pow(clamp(col,0.,1.),vec3(1./2.2));
+  // vignette + grain
+  vec2 s=gl_FragCoord.xy/R;
+  col*=mix(.35,1.,pow(16.*s.x*s.y*(1.-s.x)*(1.-s.y),.30));
+  col+=(hash(gl_FragCoord.xy+T)-.5)*.018;
+  outColor=vec4(col,1.);
+}
+</script>
+
+<script>
+(function(){
+  var canvas=document.getElementById('bg');
+  var gl=canvas.getContext('webgl2',{antialias:false,alpha:false,powerPreference:'high-performance'});
+  if(!gl)return;                       // CSS fallback stays visible
+
+  var vsSrc='#version 300 es\nin vec2 a;void main(){gl_Position=vec4(a,0.,1.);}';
+  function mk(type,src){var s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);
+    if(!gl.getShaderParameter(s,gl.COMPILE_STATUS)){console.error(gl.getShaderInfoLog(s));return null;}return s;}
+  var vs=mk(gl.VERTEX_SHADER,vsSrc), fs=mk(gl.FRAGMENT_SHADER,document.getElementById('fs').textContent.trim());
+  if(!vs||!fs)return;
+  var pr=gl.createProgram();gl.attachShader(pr,vs);gl.attachShader(pr,fs);gl.linkProgram(pr);
+  if(!gl.getProgramParameter(pr,gl.LINK_STATUS)){console.error(gl.getProgramInfoLog(pr));return;}
+  gl.useProgram(pr);
+
+  var buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+  var loc=gl.getAttribLocation(pr,'a');gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
+
+  var uR=gl.getUniformLocation(pr,'R'),uT=gl.getUniformLocation(pr,'T'),uM=gl.getUniformLocation(pr,'M');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var scale=Math.min(window.devicePixelRatio||1,1.5)*0.8;   // render below native res for speed; grain hides it
+  var mx=0,my=0,tx=0,ty=0,running=true,t0=performance.now();
+
+  function resize(){
+    var w=Math.max(2,Math.round(canvas.clientWidth*scale)),h=Math.max(2,Math.round(canvas.clientHeight*scale));
+    if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;gl.viewport(0,0,w,h);}
+  }
+  function draw(now){
+    resize();
+    mx+=(tx-mx)*.04;my+=(ty-my)*.04;
+    gl.uniform2f(uR,canvas.width,canvas.height);
+    gl.uniform1f(uT,reduce?4.:(now-t0)/1000);
+    gl.uniform2f(uM,mx,my);
+    gl.drawArrays(gl.TRIANGLES,0,3);
+    canvas.classList.add('on');
+  }
+  function loop(now){if(!running)return;draw(now);requestAnimationFrame(loop);}
+
+  if(reduce){
+    draw(performance.now());
+    window.addEventListener('resize',function(){draw(performance.now());});
+  }else{
+    window.addEventListener('pointermove',function(e){
+      tx=(e.clientX/innerWidth-.5)*2;ty=-(e.clientY/innerHeight-.5)*2;
+    },{passive:true});
+    document.addEventListener('visibilitychange',function(){
+      running=!document.hidden;if(running)requestAnimationFrame(loop);
+    });
+    requestAnimationFrame(loop);
+  }
+})();
+</script>
+</body>
+</html>
+</user_query>
+
+===== LINE 302 role=assistant len=99 =====
+تطبيق تنسيق الهيرo (stage + mask + ارتفاع) مع الإبقاء على `hero-company.jpg` دون WebGL.
+
+[REDACTED]
+
+===== LINE 303 role=assistant len=10 =====
+[REDACTED]
+
+===== LINE 304 role=assistant len=10 =====
+[REDACTED]
+
+===== LINE 305 role=assistant len=10 =====
+[REDACTED]
+
+===== LINE 306 role=assistant len=803 =====
+تم تطبيق **تنسيق الهيرo من المثال** مع **`hero-company.jpg` فقط** — بدون WebGL وبدون الـ shader.
+
+### ما تم اعتماده
+- **ارتفاع:** `clamp(560px, 86vh, 940px)` (ومobile ~480px–720px)
+- **خلفية نظيفة:** `#0b0c0e` على جانب النص (`.hero-canvas__base`)
+- **Stage 62%** على جانب الصورة (`inset-inline-end` في RTL = يسار الشاشة)
+- **Mask** مثل المرجع: fade نحو النص + fade من الأعلى
+- **موبايل ≤900px:** stage بعرض كامل وارتفاع **68%** من الأعلى، والنص في الأسفل
+
+### ما لم يُستخدم
+- Canvas / WebGL / slabs ثلاثية الأبعاد
+- Scrim كامل الشاشة القديم
+
+### الملفات
+- `index.html` — `__base` + `__stage`
+- `main.css` — layout + masks
+- `app.js` — fade-in للصورة (`is-ready`) بعد التحميل
+
+حدّث الصفحة (Ctrl+F5). إذا بدك الهيرo **أقصر** من 560px على الجوال أو الصورة **أكثر** على اليمين، نضبط النسب بسرعة.
+
+[REDACTED]

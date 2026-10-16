@@ -1,0 +1,66 @@
+﻿{
+  "navOpen": true,
+  "navClosed": true,
+  "cartOpen": true,
+  "cartClosed": true,
+  "navClosedWhenCartWasOpen": true,
+  "cartCount": "1",
+  "carouselMoved": true,
+  "checkoutValidation": {
+    "nameValue": "",
+    "fullNameError": ""
+  },
+  "footerHasDevJsonHint": false,
+  "pageErrors": [],
+  "viewportResults": [
+    {
+      "width": 320,
+      "height": 700,
+      "cards": 5,
+      "overflow": false,
+      "visibleCardRatio": 0.8319791666666667
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "cards": 5,
+      "overflow": false,
+      "visibleCardRatio": 0.823943661971831
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "cards": 5,
+      "overflow": false,
+      "visibleCardRatio": 0.7609756097560976
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "cards": 5,
+      "overflow": false,
+      "visibleCardRatio": 0.2965871402589066
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "cards": 5,
+      "overflow": false,
+      "visibleCardRatio": 0.3017169044084425
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "cards": 5,
+      "overflow": false,
+      "visibleCardRatio": 0.305080661525974
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "cards": 5,
+      "overflow": false,
+      "visibleCardRatio": 0.305080661525974
+    }
+  ]
+}

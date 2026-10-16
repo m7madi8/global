@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="إتمام الطلب — GLOBAL COMPANY — الدفع عند الاستلام" />
+    <title>إتمام الطلب — GLOBAL COMPANY</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="icon" href="/assets/brand/logo-mark.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <a class="skip-link" href="#checkout-main">انتقل إلى نموذج الطلب</a>
+
+    <header class="site-header">
+      <div class="site-header__shine" aria-hidden="true"></div>
+      <div class="container">
+        <div class="site-header__bar site-header__bar--checkout">
+          <a class="brand" href="/">
+            <img class="brand__mark brand__mark--stroke" data-brand-logo src="/assets/brand/logo-mark-outline-ink.svg" alt="" width="40" height="40" />
+            <span class="brand__text" data-brand-name>GLOBAL COMPANY</span>
+          </a>
+          <a class="btn btn--secondary checkout-back" href="/products.html">
+            <span data-icon-slot="arrowBack" aria-hidden="true"></span>
+            <span>العودة إلى المنتجات</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="checkout" id="checkout-main">
+      <div class="container">
+        <header class="checkout__head">
+          <p class="section-luxe__eyebrow">الدفع عند الاستلام</p>
+          <span class="section-luxe__rule" aria-hidden="true"></span>
+          <h1 id="checkout-form-title" class="checkout__title">إتمام الطلب</h1>
+          <p class="checkout__lead">أدخل بيانات التوصيل. نتواصل لتأكيد الطلب، وتدفع نقداً عند وصوله — بدون دفع إلكتروني.</p>
+        </header>
+
+        <div class="checkout__grid">
+          <section class="checkout__panel" aria-labelledby="checkout-form-title">
+            <aside class="checkout__summary checkout__summary--mobile" aria-labelledby="summary-title-mobile">
+              <p class="checkout__summary-label">طلبك</p>
+              <h2 id="summary-title-mobile">ملخص الطلب</h2>
+              <div class="checkout__lines" data-order-summary-lines></div>
+              <div class="checkout-summary-totals" data-order-summary-totals></div>
+            </aside>
+
+            <p id="empty-cart-notice" class="banner banner--warn checkout__empty" hidden>
+              سلة المشتريات فارغة. <a href="/products.html">أضف منتجات</a> قبل إتمام الطلب.
+            </p>
+
+            <div id="form-error-summary" class="form-summary" role="alert" tabindex="-1" hidden></div>
+
+            <form id="checkout-form" novalidate>
+              <fieldset>
+                <legend class="checkout__legend">بيانات التوصيل</legend>
+                <div class="checkout__fields">
+                  <div class="form-field">
+                    <label for="fullName">الاسم الكامل</label>
+                    <input id="fullName" name="fullName" type="text" autocomplete="name" required />
+                    <p class="field-error" data-error-for="fullName" role="alert"></p>
+                  </div>
+
+                  <div class="form-field">
+                    <label for="phone">رقم الهاتف</label>
+                    <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required dir="ltr" />
+                    <p class="field-error" data-error-for="phone" role="alert"></p>
+                  </div>
+
+                  <div class="form-field checkout__field--wide">
+                    <label for="city">المدينة / المنطقة</label>
+                    <input id="city" name="city" type="text" autocomplete="address-level2" required />
+                    <p class="field-error" data-error-for="city" role="alert"></p>
+                  </div>
+
+                  <div class="form-field checkout__field--wide">
+                    <label for="address">عنوان التوصيل</label>
+                    <textarea id="address" name="address" autocomplete="street-address" required></textarea>
+                    <p class="field-error" data-error-for="address" role="alert"></p>
+                  </div>
+
+                  <div class="form-field checkout__field--wide">
+                    <label for="notes">ملاحظات الطلب <span class="form-field__optional">(اختياري)</span></label>
+                    <textarea id="notes" name="notes" autocomplete="off"></textarea>
+                  </div>
+                </div>
+
+                <div class="checkout__paynote">
+                  <span data-icon-slot="cod" aria-hidden="true"></span>
+                  <p>الدفع: <strong>نقداً عند الاستلام</strong>. لا يُطلب أي مبلغ الآن، وتدفع عند وصول الطلب.</p>
+                </div>
+
+                <button type="submit" class="btn btn--primary btn--lg checkout__submit" id="submit-order">
+                  تأكيد الطلب — الدفع عند الاستلام
+                </button>
+              </fieldset>
+            </form>
+          </section>
+
+          <aside class="checkout__summary checkout__summary--desktop" aria-labelledby="summary-title">
+            <p class="checkout__summary-label">طلبك</p>
+            <h2 id="summary-title">ملخص الطلب</h2>
+            <div class="checkout__lines" data-order-summary-lines></div>
+            <div class="checkout-summary-totals" data-order-summary-totals></div>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <section class="checkout-done" id="checkout-success" hidden aria-live="polite">
+      <div class="container">
+        <div class="checkout-done__card">
+          <p class="checkout-done__icon"><span data-icon-slot="check" aria-hidden="true"></span></p>
+          <p class="section-luxe__eyebrow">تم الاستلام</p>
+          <h1 tabindex="-1">تم استلام طلبك</h1>
+          <p class="checkout-done__ref">
+            رقم المرجع
+            <strong id="success-order-id" class="tabular-nums"></strong>
+          </p>
+          <p class="checkout-done__amount">
+            <span>المبلغ المستحق عند الاستلام</span>
+            <strong id="success-total" class="tabular-nums"></strong>
+          </p>
+          <ol class="checkout-done__steps">
+            <li>سنتواصل معك لتأكيد توفر المنتجات وموعد التوصيل.</li>
+            <li>يُستلم المبلغ نقداً عند وصول الطلب، بدون دفع إلكتروني.</li>
+          </ol>
+          <a class="btn btn--primary" href="/products.html">متابعة التسوق</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="site-footer__beam" aria-hidden="true"></div>
+      <div class="container">
+        <div class="site-footer__shell site-footer__shell--rich">
+          <div class="site-footer__grid">
+            <div class="site-footer__col">
+              <a class="site-footer__brand-link" href="/">
+                <img class="site-footer__logo" data-footer-logo src="/assets/brand/logo-mark-outline.svg" alt="" width="36" height="36" />
+                <span data-footer-brand>GLOBAL COMPANY</span>
+              </a>
+              <p class="site-footer__meta" data-footer-payment></p>
+            </div>
+            <div class="site-footer__col">
+              <p class="site-footer__label">الموقع</p>
+              <p class="site-footer__place" data-footer-place>خاراس — الخليل</p>
+              <p class="site-footer__place-note">مقر الشركة في بلدة خاراس، محافظة الخليل.</p>
+              <a class="site-footer__map-link" href="/#location">عرض الموقع على الخريطة</a>
+              <div class="site-footer__contact" id="site-contact"></div>
+            </div>
+            <nav class="site-footer__col" aria-label="السياسات">
+              <p class="site-footer__label">السياسات</p>
+              <ul class="site-footer__policies">
+                <li><a href="/policies.html#privacy">سياسة الخصوصية</a></li>
+                <li><a href="/policies.html#delivery">سياسة التوصيل</a></li>
+                <li><a href="/policies.html#returns">سياسة الإرجاع والاستبدال</a></li>
+                <li><a href="/policies.html#terms">الشروط والأحكام</a></li>
+              </ul>
+            </nav>
+          </div>
+          <p class="site-footer__legal">
+            © <span data-footer-year>2026</span>
+            <span data-footer-brand>GLOBAL COMPANY</span>
+          </p>
+          <p class="site-footer__tagline" data-footer-tagline hidden></p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/js/checkout.js"></script>
+  </body>
+</html>

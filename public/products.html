@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="GLOBAL COMPANY — تصفّح المواتير وبديل الخشب وبديل الرخام. الدفع عند الاستلام."
+    />
+    <title>المنتجات — GLOBAL COMPANY</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="icon" href="/assets/brand/logo-mark.svg" type="image/svg+xml" />
+  </head>
+  <body class="page-products">
+    <a class="skip-link" href="#products">انتقل إلى المنتجات</a>
+
+    <div id="site-banner" class="banner banner--warn" hidden></div>
+
+    <header class="site-header">
+      <div class="site-header__shine" aria-hidden="true"></div>
+      <div class="container">
+        <div class="site-header__bar">
+          <a class="brand" href="/">
+            <img
+              class="brand__mark brand__mark--stroke"
+              data-brand-logo
+              src="/assets/brand/logo-mark-outline-ink.svg"
+              alt=""
+              width="40"
+              height="40"
+            />
+            <span class="brand__text" data-brand-name>GLOBAL COMPANY</span>
+          </a>
+
+          <nav class="site-nav site-nav--desktop" aria-label="التنقل الرئيسي">
+            <div class="site-nav__track">
+              <a
+                class="site-nav__link site-nav__link--emphasis"
+                href="/products.html"
+                aria-current="page"
+                >المنتجات</a
+              >
+              <a class="site-nav__link" href="/#about">الطلب والتوصيل</a>
+              <a class="site-nav__link" href="/#location">الموقع</a>
+            </div>
+          </nav>
+
+          <div class="header-actions">
+            <button
+              type="button"
+              class="icon-btn menu-toggle menu-toggle--lux"
+              data-nav-toggle
+              aria-expanded="false"
+              aria-controls="mobile-nav-panel"
+              aria-label="فتح القائمة"
+            >
+              <span data-icon-slot="menu" aria-hidden="true"></span>
+            </button>
+            <button
+              type="button"
+              class="icon-btn cart-trigger cart-trigger--lux"
+              data-cart-open
+              aria-haspopup="dialog"
+              aria-controls="cart-drawer"
+            >
+              <span class="cart-trigger__label">فتح السلة</span>
+              <span data-icon-slot="cart" aria-hidden="true"></span>
+              <span class="cart-trigger__count" data-cart-count data-count="0" aria-hidden="true">0</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div id="nav-overlay" class="nav-overlay" aria-hidden="true"></div>
+
+    <nav
+      id="mobile-nav-panel"
+      class="mobile-nav-panel"
+      aria-label="التنقل — جوال"
+      aria-hidden="true"
+      hidden
+    >
+      <div class="mobile-nav-panel__backdrop" aria-hidden="true"></div>
+      <header class="mobile-nav-panel__header">
+        <div class="mobile-nav-panel__identity">
+          <img
+            class="mobile-nav-panel__mark"
+            src="/assets/brand/logo-mark-outline.svg"
+            alt=""
+            width="40"
+            height="40"
+          />
+          <div>
+            <p class="mobile-nav-panel__brand" data-brand-name>GLOBAL COMPANY</p>
+            <p class="mobile-nav-panel__hint">التنقل</p>
+          </div>
+        </div>
+        <button type="button" class="mobile-nav-panel__close" data-nav-toggle aria-label="إغلاق القائمة">
+          <span class="sr-only">إغلاق</span>
+          <span class="mobile-nav-panel__close-icon" aria-hidden="true">
+            <span data-icon-slot="close"></span>
+          </span>
+        </button>
+      </header>
+      <div class="mobile-nav-panel__menu">
+        <ol class="mobile-nav-panel__list">
+          <li>
+            <a class="mobile-nav-panel__item mobile-nav-panel__item--stack" href="#products">
+              <span class="mobile-nav-panel__num" aria-hidden="true">01</span>
+              <span class="mobile-nav-panel__item-copy">
+                <span class="mobile-nav-panel__label">المنتجات</span>
+                <span class="mobile-nav-panel__sub">المواتير · بديل الخشب · بديل الرخام</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="mobile-nav-panel__item" href="/#about">
+              <span class="mobile-nav-panel__num" aria-hidden="true">02</span>
+              <span class="mobile-nav-panel__label">الطلب والتوصيل</span>
+            </a>
+          </li>
+          <li>
+            <a class="mobile-nav-panel__item" href="/#location">
+              <span class="mobile-nav-panel__num" aria-hidden="true">03</span>
+              <span class="mobile-nav-panel__label">الموقع</span>
+            </a>
+          </li>
+        </ol>
+      </div>
+      <footer class="mobile-nav-panel__footer">
+        <a class="mobile-nav-panel__cart-cta" href="#" data-cart-open>
+          <span data-icon-slot="cart" aria-hidden="true"></span>
+          <span>فتح السلة</span>
+        </a>
+      </footer>
+    </nav>
+
+    <p id="cart-live" class="sr-only-visually-hidden" aria-live="polite" aria-atomic="true"></p>
+
+    <main id="main" class="page-products__main">
+      <div class="products-page" id="products" aria-labelledby="products-page-title">
+        <header class="products-hub container">
+          <div class="products-hub__intro">
+            <p class="section-luxe__eyebrow">GLOBAL COMPANY</p>
+            <span class="section-luxe__rule" aria-hidden="true"></span>
+            <h1 class="products-hub__title" id="products-page-title">المنتجات</h1>
+            <p class="products-hub__lead">
+              مواتير كهربائية، بديل خشب WPC، وبديل رخام. الدفع عند الاستلام.
+            </p>
+          </div>
+          <nav class="products-jump" aria-label="انتقال سريع بين الأقسام">
+            <a class="products-jump__link" href="#catalog-section">المواتير</a>
+            <a class="products-jump__link" href="#catalog-wpc-section">بديل الخشب</a>
+            <a class="products-jump__link" href="#catalog-marble-section">بديل الرخام</a>
+          </nav>
+        </header>
+
+        <section class="section-luxe catalog-band" id="catalog-section" aria-labelledby="catalog-title">
+          <div class="container catalog-band__shell">
+            <span class="catalog-band__index" aria-hidden="true">01</span>
+            <div class="product-carousel" data-product-carousel="motors">
+              <div class="product-carousel__head">
+                <div>
+                  <h2 class="section__title" id="catalog-title">المواتير الكهربائية</h2>
+                  <p class="section__intro">
+                    مواتير إيطالية بقدرات محددة — مرّر أفقياً لاختيار الحصان المناسب.
+                  </p>
+                </div>
+                <div class="carousel__controls" aria-hidden="false">
+                  <button type="button" class="carousel__btn icon-btn" data-carousel-prev aria-label="المنتج السابق">
+                    <span data-icon-slot="chevronStart" aria-hidden="true"></span>
+                  </button>
+                  <button type="button" class="carousel__btn icon-btn" data-carousel-next aria-label="المنتج التالي">
+                    <span data-icon-slot="chevronEnd" aria-hidden="true"></span>
+                  </button>
+                </div>
+              </div>
+              <div class="carousel-shell">
+                <div
+                  class="carousel__viewport"
+                  id="catalog"
+                  tabindex="0"
+                  role="region"
+                  aria-labelledby="catalog-title"
+                ></div>
+              </div>
+              <p class="carousel-hint">مرّر أفقياً لاستكشاف المواتير</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-luxe catalog-band" id="catalog-wpc-section" aria-labelledby="catalog-wpc-title">
+          <div class="container catalog-band__shell">
+            <span class="catalog-band__index" aria-hidden="true">02</span>
+            <div class="product-carousel" data-product-carousel="wpc">
+              <div class="product-carousel__head">
+                <div>
+                  <h2 class="section__title" id="catalog-wpc-title">بديل الخشب</h2>
+                  <p class="section__intro">
+                    ألواح مركّبة WPC بخمسة ألوان — للواجهات والتراسات. الأسعار استرشادية للمتر الطولي (₪) وتُؤكَّد
+                    عند الطلب.
+                  </p>
+                </div>
+                <div class="carousel__controls" aria-hidden="false">
+                  <button type="button" class="carousel__btn icon-btn" data-carousel-prev aria-label="المنتج السابق">
+                    <span data-icon-slot="chevronStart" aria-hidden="true"></span>
+                  </button>
+                  <button type="button" class="carousel__btn icon-btn" data-carousel-next aria-label="المنتج التالي">
+                    <span data-icon-slot="chevronEnd" aria-hidden="true"></span>
+                  </button>
+                </div>
+              </div>
+              <div class="carousel-shell">
+                <div
+                  class="carousel__viewport"
+                  id="catalog-wpc"
+                  tabindex="0"
+                  role="region"
+                  aria-labelledby="catalog-wpc-title"
+                ></div>
+              </div>
+              <p class="carousel-hint">مرّر أفقياً لاستكشاف بديل الخشب</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-luxe catalog-band" id="catalog-marble-section" aria-labelledby="catalog-marble-title">
+          <div class="container catalog-band__shell">
+            <span class="catalog-band__index" aria-hidden="true">03</span>
+            <div class="product-carousel" data-product-carousel="marble">
+              <div class="product-carousel__head">
+                <div>
+                  <h2 class="section__title" id="catalog-marble-title">بديل الرخام</h2>
+                  <p class="section__intro">
+                    ألواح PVC بتشطيبات رخامية (122×244 سم) — للجدران الداخلية. السعر استرشادي للوح (₪) ويُحدَّد
+                    نهائياً قبل التسليم.
+                  </p>
+                </div>
+                <div class="carousel__controls" aria-hidden="false">
+                  <button type="button" class="carousel__btn icon-btn" data-carousel-prev aria-label="المنتج السابق">
+                    <span data-icon-slot="chevronStart" aria-hidden="true"></span>
+                  </button>
+                  <button type="button" class="carousel__btn icon-btn" data-carousel-next aria-label="المنتج التالي">
+                    <span data-icon-slot="chevronEnd" aria-hidden="true"></span>
+                  </button>
+                </div>
+              </div>
+              <div class="carousel-shell">
+                <div
+                  class="carousel__viewport"
+                  id="catalog-marble"
+                  tabindex="0"
+                  role="region"
+                  aria-labelledby="catalog-marble-title"
+                ></div>
+              </div>
+              <p class="carousel-hint">مرّر أفقياً لاستكشاف بديل الرخام</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__beam" aria-hidden="true"></div>
+      <div class="container">
+        <div class="site-footer__shell site-footer__shell--rich">
+          <div class="site-footer__grid">
+            <div class="site-footer__col">
+              <a class="site-footer__brand-link" href="/">
+                <img
+                  class="site-footer__logo"
+                  data-footer-logo
+                  src="/assets/brand/logo-mark-outline.svg"
+                  alt=""
+                  width="36"
+                  height="36"
+                />
+                <span data-footer-brand>GLOBAL COMPANY</span>
+              </a>
+              <p class="site-footer__meta" data-footer-payment></p>
+            </div>
+            <div class="site-footer__col">
+              <p class="site-footer__label">الموقع</p>
+              <p class="site-footer__place" data-footer-place>خاراس — الخليل</p>
+              <p class="site-footer__place-note">مقر الشركة في بلدة خاراس، محافظة الخليل.</p>
+              <a class="site-footer__map-link" href="/#location">عرض الموقع على الخريطة</a>
+              <div class="site-footer__contact" id="site-contact"></div>
+            </div>
+            <nav class="site-footer__col" aria-label="السياسات">
+              <p class="site-footer__label">السياسات</p>
+              <ul class="site-footer__policies">
+                <li><a href="/policies.html#privacy">سياسة الخصوصية</a></li>
+                <li><a href="/policies.html#delivery">سياسة التوصيل</a></li>
+                <li><a href="/policies.html#returns">سياسة الإرجاع والاستبدال</a></li>
+                <li><a href="/policies.html#terms">الشروط والأحكام</a></li>
+              </ul>
+            </nav>
+          </div>
+          <p class="site-footer__legal">
+            © <span data-footer-year>2026</span>
+            <span data-footer-brand>GLOBAL COMPANY</span>
+          </p>
+          <p class="site-footer__tagline" data-footer-tagline hidden></p>
+        </div>
+      </div>
+    </footer>
+
+    <div id="overlay" class="overlay" data-cart-close tabindex="-1" aria-hidden="true"></div>
+
+    <aside
+      id="cart-drawer"
+      class="drawer drawer--luxury"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cart-drawer-title"
+      aria-hidden="true"
+    >
+      <div class="drawer__header drawer__header--luxury">
+        <div class="drawer__intro">
+          <p class="drawer__eyebrow">GLOBAL COMPANY</p>
+          <h2 class="drawer__title" id="cart-drawer-title">سلة المشتريات</h2>
+          <p class="drawer__meta" data-cart-drawer-meta aria-live="polite"></p>
+        </div>
+        <button type="button" class="drawer__close drawer__close--minimal" data-cart-close aria-label="إغلاق السلة">
+          <span class="sr-only">إغلاق</span>
+          <span class="drawer__close-icon" aria-hidden="true">
+            <span data-icon-slot="close"></span>
+          </span>
+        </button>
+      </div>
+      <div class="drawer__body drawer__body--luxury" id="cart-drawer-body"></div>
+      <div class="drawer__footer drawer__footer--luxury" id="cart-drawer-footer"></div>
+    </aside>
+
+    <dialog id="product-dialog" class="dialog" aria-labelledby="dialog-title">
+      <div class="dialog__inner">
+        <header class="dialog__header">
+          <h2 class="dialog__title" id="dialog-title">المنتج</h2>
+          <button type="button" class="icon-btn" data-dialog-close aria-label="إغلاق التفاصيل">
+            <span data-icon-slot="close" aria-hidden="true"></span>
+          </button>
+        </header>
+        <div class="dialog__media">
+          <img id="dialog-image" src="" alt="" width="800" height="600" />
+        </div>
+        <p id="dialog-desc" class="dialog__desc"></p>
+        <p class="dialog__price-row">
+          <strong id="dialog-price" class="tabular-nums"></strong>
+          <span id="dialog-unit" class="product-card__unit"></span>
+        </p>
+        <button type="button" class="btn btn--primary" id="dialog-add">أضف إلى السلة</button>
+      </div>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script type="module" src="/js/products.js"></script>
+  </body>
+</html>
