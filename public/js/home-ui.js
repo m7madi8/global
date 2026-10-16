@@ -43,22 +43,7 @@ export function initPlaceMap() {
   if (!frame) return;
   const src = frame.getAttribute("data-src");
   if (!src || frame.getAttribute("src")) return;
-
-  const show = () => frame.setAttribute("src", src);
-  if (!("IntersectionObserver" in window)) {
-    show();
-    return;
-  }
-
-  const io = new IntersectionObserver(
-    (entries) => {
-      if (!entries.some((entry) => entry.isIntersecting)) return;
-      show();
-      io.disconnect();
-    },
-    { rootMargin: "240px" }
-  );
-  io.observe(frame);
+  frame.setAttribute("src", src);
 }
 
 export function initHomeMotion() {
