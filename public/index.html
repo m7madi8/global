@@ -20,7 +20,7 @@
 
     <link rel="stylesheet" href="/css/main.css" />
 
-    <link rel="icon" href="/assets/brand/logo-mark.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/brand/logo.png" type="image/png" />
 
   </head>
 
@@ -44,27 +44,11 @@
 
           <a class="brand" href="/">
 
-            <img class="brand__mark brand__mark--stroke" data-brand-logo src="/assets/brand/logo-mark-outline-ink.svg" alt="" width="40" height="40" />
+            <img class="brand__mark brand__mark--stroke" data-brand-logo src="/assets/brand/logo.png" alt="" width="1024" height="626" />
 
             <span class="brand__text" data-brand-name>GLOBAL COMPANY</span>
 
           </a>
-
-
-
-          <nav class="site-nav site-nav--desktop" aria-label="التنقل الرئيسي">
-
-            <div class="site-nav__track">
-
-              <a class="site-nav__link site-nav__link--emphasis" href="/products.html">المنتجات</a>
-
-              <a class="site-nav__link" href="#about">الطلب والتوصيل</a>
-
-              <a class="site-nav__link" href="#location">الموقع</a>
-
-            </div>
-
-          </nav>
 
 
 
@@ -130,7 +114,7 @@
 
       class="mobile-nav-panel"
 
-      aria-label="التنقل — جوال"
+      aria-label="القائمة"
 
       aria-hidden="true"
 
@@ -148,13 +132,13 @@
 
             class="mobile-nav-panel__mark"
 
-            src="/assets/brand/logo-mark-outline.svg"
+            src="/assets/brand/logo.png"
 
             alt=""
 
-            width="40"
+            width="1024"
 
-            height="40"
+            height="626"
 
           />
 
@@ -188,17 +172,11 @@
 
           <li>
 
-            <a class="mobile-nav-panel__item mobile-nav-panel__item--stack" href="/products.html">
+            <a class="mobile-nav-panel__item" href="/" aria-current="page">
 
               <span class="mobile-nav-panel__num" aria-hidden="true">01</span>
 
-              <span class="mobile-nav-panel__item-copy">
-
-                <span class="mobile-nav-panel__label">المنتجات</span>
-
-                <span class="mobile-nav-panel__sub">المواتير · بديل الخشب · بديل الرخام</span>
-
-              </span>
+              <span class="mobile-nav-panel__label">الرئيسية</span>
 
             </a>
 
@@ -206,9 +184,31 @@
 
           <li>
 
-            <a class="mobile-nav-panel__item" href="#about">
+            <a class="mobile-nav-panel__item" href="/products.html">
 
               <span class="mobile-nav-panel__num" aria-hidden="true">02</span>
+
+              <span class="mobile-nav-panel__label">المنتجات</span>
+
+            </a>
+
+            <ul class="mobile-nav-panel__sublist">
+
+              <li><a class="mobile-nav-panel__sublink" href="/products.html#catalog-section">المواتير</a></li>
+
+              <li><a class="mobile-nav-panel__sublink" href="/products.html#catalog-wpc-section">بديل الخشب</a></li>
+
+              <li><a class="mobile-nav-panel__sublink" href="/products.html#catalog-marble-section">بديل الرخام</a></li>
+
+            </ul>
+
+          </li>
+
+          <li>
+
+            <a class="mobile-nav-panel__item" href="#about">
+
+              <span class="mobile-nav-panel__num" aria-hidden="true">03</span>
 
               <span class="mobile-nav-panel__label">الطلب والتوصيل</span>
 
@@ -220,9 +220,21 @@
 
             <a class="mobile-nav-panel__item" href="#location">
 
-              <span class="mobile-nav-panel__num" aria-hidden="true">03</span>
+              <span class="mobile-nav-panel__num" aria-hidden="true">04</span>
 
               <span class="mobile-nav-panel__label">الموقع</span>
+
+            </a>
+
+          </li>
+
+          <li>
+
+            <a class="mobile-nav-panel__item" href="/policies.html">
+
+              <span class="mobile-nav-panel__num" aria-hidden="true">05</span>
+
+              <span class="mobile-nav-panel__label">السياسات</span>
 
             </a>
 
@@ -261,10 +273,10 @@
               <img
                 class="hero-luxe__logo"
                 data-hero-logo
-                src="/assets/brand/logo-mark-outline-ink.svg"
+                src="/assets/brand/logo.png"
                 alt=""
-                width="44"
-                height="44"
+                width="1024"
+                height="626"
               />
               <span class="hero-luxe__wordmark" data-hero-wordmark>GLOBAL COMPANY</span>
             </div>
@@ -568,10 +580,10 @@
                 <img
                   class="site-footer__logo"
                   data-footer-logo
-                  src="/assets/brand/logo-mark-outline.svg"
+                  src="/assets/brand/logo.png"
                   alt=""
-                  width="36"
-                  height="36"
+                  width="1024"
+                  height="626"
                 />
                 <span data-footer-brand>GLOBAL COMPANY</span>
               </a>

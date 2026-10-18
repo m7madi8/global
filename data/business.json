@@ -15,17 +15,18 @@
   "serviceArea": null,
   "workingHours": null,
   "heroImage": "/assets/brand/hero-company.jpg",
-  "logo": "/assets/brand/logo-mark-outline-ink.svg",
-  "logoFilled": "/assets/brand/logo-mark.svg",
-  "logoOutline": "/assets/brand/logo-mark-outline.svg",
+  "logo": "/assets/brand/logo.png",
+  "logoFilled": "/assets/brand/logo.png",
+  "logoOutline": "/assets/brand/logo.png",
   "currency": "ILS",
   "deliveryCharge": null,
   "paymentNote": "الدفع نقداً عند الاستلام فقط.",
   "featuredProductIds": [
-    "gc-004",
-    "gc-wpc-001",
+    "gc-001",
     "gc-002",
+    "gc-wpc-001",
+    "gc-wpc-002",
     "gc-marble-001",
-    "gc-003"
+    "gc-marble-002"
   ]
 }

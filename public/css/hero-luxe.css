@@ -32,9 +32,12 @@
 }
 
 .hero-luxe__logo {
-  width: 2.75rem;
-  height: 2.75rem;
+  width: auto;
+  height: 7.5rem;
+  max-width: min(22rem, 100%);
+  aspect-ratio: 1024 / 626;
   flex-shrink: 0;
+  object-fit: contain;
 }
 
 .hero-luxe__wordmark {

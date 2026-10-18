@@ -411,23 +411,34 @@ function interleaveFeatured(groups) {
   return out;
 }
 
+function groupsByCategory(list) {
+  const byCat = { motors: [], wpc: [], marble: [] };
+  list.forEach((product) => {
+    const cat = product.category || "motors";
+    (byCat[cat] || byCat.motors).push(product);
+  });
+  return [byCat.motors, byCat.wpc, byCat.marble];
+}
+
 function pickFeaturedProducts() {
-  const products = catalogState?.products || [];
+  const products = (catalogState?.products || []).filter((product) => isProductPurchasable(product));
   const ids = catalogState?.meta?.featuredProductIds;
-  if (Array.isArray(ids) && ids.length) {
-    const byId = new Map(products.map((p) => [p.id, p]));
-    const picked = ids.map((id) => byId.get(id)).filter((p) => p && isProductPurchasable(p));
-    const byCat = { motors: [], wpc: [], marble: [] };
-    picked.forEach((p) => {
-      const cat = p.category || "motors";
-      if (byCat[cat]) byCat[cat].push(p);
-    });
-    return interleaveFeatured([byCat.motors, byCat.wpc, byCat.marble]);
+  const byId = new Map(products.map((product) => [product.id, product]));
+  const seeded = Array.isArray(ids)
+    ? ids.map((id) => byId.get(id)).filter(Boolean)
+    : [];
+
+  let picked = seeded.length
+    ? interleaveFeatured(groupsByCategory(seeded))
+    : interleaveFeatured(groupsByCategory(products).map((list) => list.slice(0, 2)));
+
+  if (picked.length < 6) {
+    const seen = new Set(picked.map((product) => product.id));
+    const rest = products.filter((product) => !seen.has(product.id));
+    picked = picked.concat(interleaveFeatured(groupsByCategory(rest)));
   }
-  const groups = ["motors", "wpc", "marble"].map((cat) =>
-    products.filter((p) => (p.category || "motors") === cat && isProductPurchasable(p)).slice(0, 2)
-  );
-  return interleaveFeatured(groups);
+
+  return picked.slice(0, 6);
 }
 
 function renderFeaturedGrid() {
